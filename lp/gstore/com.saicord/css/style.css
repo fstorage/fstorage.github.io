@@ -93,7 +93,7 @@ body {
     color: #ffffff;
     text-decoration: none;
     text-align: center;
-    padding: 0.55rem 1.5rem;
+    padding: 0.55rem 1rem;
     border-radius: 0.2rem;
     font-weight: 400;
     margin-bottom: 1.8rem;
@@ -174,13 +174,7 @@ body {
 
 @media (min-width: 576px) {}
 
-@media (min-width: 768px) {}
-
-@media (min-width: 992px) {
-    .container {
-        max-width: 960px;
-    }
-
+@media (min-width: 768px) {
     .btn-install {
         position: absolute;
         z-index: 999;
@@ -190,8 +184,18 @@ body {
         margin-bottom: 0;
     }
 
+    .screens a {
+        width: 8rem;
+    }
+}
+
+@media (min-width: 992px) {
     .screens {
         margin-right: 0;
+    }
+
+    .screens a {
+        width: 10rem;
     }
 }
 
@@ -211,6 +215,6 @@ body {
     }
 
     .screens a {
-        width: 16rem;
+        width: 14rem;
     }
 }
