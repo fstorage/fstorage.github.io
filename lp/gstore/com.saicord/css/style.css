@@ -1,0 +1,213 @@
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #474747;
+    background-color: #ffffff;
+
+}
+
+.container {
+    padding: 1.75rem;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+}
+
+.app {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.app > .left {
+    margin-right: 1.75rem;
+}
+
+.app > .left > .icon {
+    width: 6.75rem;
+    background: #5865f2;
+    border-radius: 20%;
+    box-shadow: 0px 2px 5px 0px rgb(0 0 0 / 20%);
+}
+
+.app > .right > .name {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.1;
+    color: #1f1f1f;
+    margin-bottom: 0.5rem;
+}
+
+.app > .right > .vendor {
+    color: #00875f;
+    font-weight: 500;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.info > div {
+    text-align: center;
+}
+
+.info > div > span {
+    display: block;
+}
+
+.info > div > span:first-child {
+    font-weight: 400;
+    color: #1f1f1f;
+}
+
+.info > div > span > svg {
+    width: 1.5rem;
+    vertical-align: middle;
+    margin-top: -0.25rem;
+}
+
+.info > .vr {
+    background: #dbdce0;
+    width: 0.1rem;
+    height: 2rem;
+}
+
+.btn-install {
+    display: block;
+    background: #00875f;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+.btn-install:hover {
+    background: #026a4c;
+}
+
+.screens {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    margin-right: -1.75rem;
+}
+
+.screens a {
+    display: block;
+    margin-right: 1rem;
+    width: 8rem;
+    border-radius: .5rem;
+    box-shadow: 0px 2px 5px 0px rgb(0 0 0 / 20%);
+    overflow: hidden;
+    padding: 0;
+    background: #dbdce0;
+}
+
+.screens a > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.screens .carousel__dots, .screens .carousel__nav {
+    display: none;
+}
+
+.fancybox__toolbar {
+    background: transparent;
+}
+
+.fancybox__slide {
+    padding: 8px;
+}
+
+.block {
+    margin-bottom: 2rem;
+}
+
+.block > .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #1f1f1f;
+    margin-bottom: 1rem;
+}
+
+.block > .title > svg {
+    width: 2rem;
+}
+
+.tags {
+    margin-bottom: 2rem;
+}
+
+.tags > span {
+    display: inline-block;
+    font-weight: 400;
+    padding: 0.25rem 1.25rem;
+    border-radius: 1.5rem;
+    border: 0.1rem solid #c7c7c7;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+@media (min-width: 576px) {}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .btn-install {
+        position: absolute;
+        z-index: 999;
+        top: 3.5rem;
+        right: 1.75rem;
+        min-width: 10rem;
+        margin-bottom: 0;
+    }
+
+    .screens {
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+
+    .screens a {
+        width: 12rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+
+    .screens a {
+        width: 16rem;
+    }
+}
