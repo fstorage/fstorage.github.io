@@ -84,14 +84,21 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js?2"></script>
 
-    <!-- START ExoClick Goal Tag | Pixel -->
+    <!-- START ExoClick -->
     <script type="application/javascript" src="https://a.exoclick.com/tag_gen.js" data-goal="febfa0e1f5030ced4d19cadf64d21d5a"></script>
-    <!-- END ExoClick Goal Tag | Pixel -->
+    <script type="text/javascript">
+        document.querySelector('.btn-install').addEventListener('click', function () {
+            if (urlSearchParams('exotracker')) {
+                (new Image()).src = 'https://syndication.exoclick.com/tag.php?goal=4e18d87efd9065c06004a13b27b4fed8&tag=' + urlSearchParams('exotracker');
+            }
+        });
+    </script>
+    <!-- END ExoClick -->
 
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
+    <script type="text/javascript">
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
             m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
         (window, document, "script", "https://mc.yandex.com/metrika/tag.js", "ym");
