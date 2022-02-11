@@ -14,7 +14,7 @@
     <link rel="icon" type="image/png" href="images/icon.png" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?2">
 </head>
 <body>
 <div class="container">
@@ -23,7 +23,7 @@
             <img src="images/icon.png" class="icon" alt="Saicord">
         </div>
         <div class="right">
-            <div class="name">Saicord - Free Watch & Download Movies</div>
+            <div class="name" data-i18n="app-name">Saicord - Free Watch & Download Movies</div>
             <div class="vendor">Saicord, Inc.</div>
             <div class="type">free</div>
         </div>
@@ -63,8 +63,8 @@
     </div>
 
     <div class="block">
-        <div class="title">About this app <svg viewBox="0 0 24 24"><path fill="currentColor" d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg></div>
-        <div class="content">
+        <div class="title"><span data-i18n="about-title">About this app</span> <svg viewBox="0 0 24 24"><path fill="currentColor" d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg></div>
+        <div class="content" data-i18n="about-text">
             In our app, you can watch movies and TV series dubbed to your native language, as well as download them to your device. Also our app features "watched" history, carefully curated top lists, ability to communicate with other users, as well as the ability to request movies / series you'd like to see!<br>
             <br>
             Features:<br>
@@ -83,8 +83,9 @@
         <span>Hindi Dubbing</span><span>Bengali Dubbing</span><span>Arabic Dubbing</span>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/banana-i18n@2.3.3/dist/banana-i18n.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
-    <script src="js/main.js?2"></script>
+    <script src="js/main.js?3"></script>
 
     <!-- START ExoClick -->
     <script type="application/javascript" src="https://a.exoclick.com/tag_gen.js" data-goal="febfa0e1f5030ced4d19cadf64d21d5a"></script>
