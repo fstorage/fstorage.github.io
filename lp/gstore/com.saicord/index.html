@@ -88,13 +88,15 @@
     <script src="js/main.js?3"></script>
 
     <!-- START ExoClick -->
-    <script type="application/javascript" src="https://a.exoclick.com/tag_gen.js" data-goal="febfa0e1f5030ced4d19cadf64d21d5a"></script>
+    <!--<script type="application/javascript" src="https://a.exoclick.com/tag_gen.js" data-goal="febfa0e1f5030ced4d19cadf64d21d5a"></script>-->
     <script type="text/javascript">
-        document.querySelector('.btn-install').addEventListener('click', function () {
-            if (urlSearchParams('exotracker')) {
+        if (urlSearchParams('exotracker')) {
+            (new Image()).src = 'https://syndication.exoclick.com/tag.php?goal=febfa0e1f5030ced4d19cadf64d21d5a&tag=' + urlSearchParams('exotracker');
+
+            document.querySelector('.btn-install').addEventListener('click', function () {
                 (new Image()).src = 'https://syndication.exoclick.com/tag.php?goal=4e18d87efd9065c06004a13b27b4fed8&tag=' + urlSearchParams('exotracker');
-            }
-        });
+            });
+        }
     </script>
     <!-- END ExoClick -->
 
