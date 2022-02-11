@@ -240,3 +240,16 @@ body {
     -webkit-transform: scale(-1, -1);
     transform: scale(-1, -1);
 }
+
+@media (min-width: 768px) {
+    [dir="rtl"] .btn-install {
+        right: auto;
+        left: 1.5rem;
+    }
+}
+
+@media (min-width: 992px) {
+    [dir="rtl"] .screens {
+        margin-left: 0;
+    }
+}
