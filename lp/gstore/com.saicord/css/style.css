@@ -219,3 +219,24 @@ body {
         width: 14rem;
     }
 }
+
+[dir="rtl"] .app > .left {
+    margin-right: 0;
+    margin-left: 1.75rem;
+}
+
+[dir="rtl"] .screens {
+    margin-right: 0;
+    margin-left: -1.5rem;
+}
+[dir="rtl"] .screens a {
+    margin-right: 0;
+    margin-left: 0.7rem;
+}
+
+[dir="rtl"] .block > .title > svg {
+    -moz-transform: scale(-1, -1);
+    -o-transform: scale(-1, -1);
+    -webkit-transform: scale(-1, -1);
+    transform: scale(-1, -1);
+}
