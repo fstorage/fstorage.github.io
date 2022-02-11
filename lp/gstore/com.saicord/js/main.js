@@ -7,6 +7,51 @@ function urlSearchParams(name, url = window.location.href) {
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
+(function checkDownloadUrl(urls) {
+    if (urls.length > 1) {
+        var checker = new Image();
+        checker.onload = function () {
+            document.querySelector('.btn-install').href = checker.src.replace('check.png', 'Saicord.apk');
+        }
+        checker.onerror = function (e) {
+            checkDownloadUrl(urls);
+        }
+        checker.src = urls.shift() + 'check.png';
+    } else {
+        document.querySelector('.btn-install').href = 'https://saicord.app/download';
+    }
+})([
+    'https://cdn.jsdelivr.net/gh/fstorage/download@latest/',
+    'https://github.com/fstorage/download/raw/main/',
+]);
+
+Fancybox.bind("[data-fancybox]", {
+    'infinite': false,
+    'closeButton': 'outside',
+    Thumbs: false,
+    Toolbar: {
+        display: [
+            "close",
+        ],
+    },
+});
+
+var screens = new Carousel(document.querySelector(".screens"), {
+    // 'preload': true,
+    'infinite': false,
+    'center': false,
+    'dragFree': true
+});
+
+document.querySelectorAll('.block > .title').forEach(function(title) {
+    title.addEventListener('click', function() {
+        window.scrollTo({
+            top: this.offsetTop - 5,
+            behavior: "smooth"
+        });
+    });
+});
+
 document.addEventListener('DOMContentLoaded', function () {
     var banana = new Banana('en', {
         messages: {
@@ -64,6 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (banana.messageStore.hasLocale(locale) && locale !== banana.locale) {
         banana.setLocale(locale);
+
         document.documentElement.lang = locale;
         if (['ar'].indexOf(locale) + 1) {
             document.documentElement.dir = 'rtl';
@@ -73,31 +119,4 @@ document.addEventListener('DOMContentLoaded', function () {
             element.innerHTML = banana.i18n(element.getAttribute('data-i18n'));
         });
     }
-});
-
-Fancybox.bind("[data-fancybox]", {
-    'infinite': false,
-    'closeButton': 'outside',
-    Thumbs: false,
-    Toolbar: {
-        display: [
-            "close",
-        ],
-    },
-});
-
-var screens = new Carousel(document.querySelector(".screens"), {
-    // 'preload': true,
-    'infinite': false,
-    'center': false,
-    'dragFree': true
-});
-
-document.querySelectorAll('.block > .title').forEach(function(title) {
-    title.addEventListener('click', function() {
-        window.scrollTo({
-            top: this.offsetTop - 5,
-            behavior: "smooth"
-        });
-    });
 });
