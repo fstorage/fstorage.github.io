@@ -241,6 +241,11 @@ body {
     transform: scale(-1, -1);
 }
 
+[dir="rtl"] .tags > span {
+    margin-right: 0;
+    margin-left: 0.5rem;
+}
+
 @media (min-width: 768px) {
     [dir="rtl"] .btn-install {
         right: auto;
