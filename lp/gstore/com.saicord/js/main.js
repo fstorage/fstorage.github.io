@@ -36,7 +36,7 @@ Fancybox.bind("[data-fancybox]", {
     },
 });
 
-var screens = new Carousel(document.querySelector(".screens"), {
+var screens = new Carousel(document.querySelector('.screens'), {
     // 'preload': true,
     'infinite': false,
     'center': false,
@@ -105,9 +105,10 @@ document.addEventListener('DOMContentLoaded', function () {
         finalFallback: 'en'
     });
 
-    var locale = urlSearchParams('lng');
+    var defaultLocale = 'en';
+    var locale = banana.messageStore.hasLocale(urlSearchParams('lng')) && urlSearchParams('lng') || defaultLocale;
 
-    if (banana.messageStore.hasLocale(locale) && locale !== banana.locale) {
+    if (locale !== banana.locale) {
         banana.setLocale(locale);
 
         document.documentElement.lang = locale;
@@ -117,6 +118,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         document.querySelectorAll('[data-i18n]').forEach(function (element) {
             element.innerHTML = banana.i18n(element.getAttribute('data-i18n'));
+        });
+
+        document.querySelectorAll('.carousel__slide').forEach(function (element) {
+            element.setAttribute('data-src', element.getAttribute('data-src').replace('images/', 'images/' + banana.locale + '-'));
+            element.querySelector('img').setAttribute('data-lazy-src', element.querySelector('img').getAttribute('data-lazy-src').replace('images/', 'images/' + banana.locale + '-'));
+            element.querySelector('img').setAttribute('src', element.querySelector('img').getAttribute('src').replace('images/', 'images/' + banana.locale + '-'));
         });
     }
 });
