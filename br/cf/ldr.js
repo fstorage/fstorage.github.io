@@ -25,7 +25,7 @@
 
     try {
         var geo = JSON.parse(await request('GET', 'https://ip.nf/me.json'));
-    } catch {}
+    } catch (e) {}
 
     var countryCode = geo && geo.country_code || 'US';
     var langCode = 'en';
@@ -105,6 +105,8 @@
     document.body.appendChild(wrp);
     wrp.appendChild(cnt);
     cnt.appendChild(ifrm);
+    ifrm.contentWindow.document.open();
+    ifrm.contentWindow.document.close();
     ifrm.contentWindow.document.body.appendChild(bnr);
 })({
     'android': {
