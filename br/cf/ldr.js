@@ -26,7 +26,7 @@
     async function getCountryCode(defaultCode = 'US') {
         try {
             var geo = JSON.parse(await request('GET', 'https://ip.nf/me.json'));
-            return geo && geo.country_code || defaultCode;
+            return geo && geo.ip && geo.ip.country_code || defaultCode;
         } catch (e) {
             return defaultCode;
         }
