@@ -134,7 +134,7 @@ ym(87554829, "init", {clickmap:true,trackLinks:true,accurateTrackBounce:true,web
         ym(87554829,'reachGoal','CLICK');
     });
     
-    document.body.appendChild(wrp);
+    document.body.insertBefore(wrp, document.body.firstChild); // document.body.appendChild(wrp);
     wrp.appendChild(cls);
     wrp.appendChild(ifrm);
     ifrm.contentWindow.document.open();
