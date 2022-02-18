@@ -23,7 +23,7 @@
         });
     }
 
-    async function getCountryCode(defaultCode = 'en') {
+    async function getCountryCode(defaultCode = 'US') {
         try {
             var geo = JSON.parse(await request('GET', 'https://ip.nf/me.json'));
             return geo && geo.country_code || defaultCode;
@@ -41,11 +41,22 @@
         }
     }
 
+    function getLangName(langCode = 'en') {
+        switch (langCode) {
+            case 'hi': return 'Hindi'; break;
+            case 'bn': return 'Bengali'; break;
+            default: return ''; break;
+        }
+    }
+
     var countryCode = await getCountryCode();
     var langCode = getLangCode(countryCode);
+    var langName = getLangName(langCode);
 
     cfg.content = cfg.content.replace(/\{lang_code\}/g, langCode);
+    cfg.content = cfg.content.replace(/\{lang_name\}/g, langName);
     cfg.url = cfg.url.replace(/\{lang_code\}/g, langCode);
+    cfg.url = cfg.url.replace(/\{lang_name\}/g, langName);
     cfg.url = cfg.url.replace(/\{domain\}/g, window.location.host);
 
     var wrp = document.createElement('div');
@@ -96,6 +107,7 @@
     ifrm.style.position = 'absolute';
     ifrm.style.bottom = '0px';
     ifrm.style.left = '0px';
+    cls.style.backgroundColor = '#ffffff';
 
     var cntr = document.createElement('div');
     cntr.style.width = '100%';
@@ -116,7 +128,7 @@
     ifrm.contentWindow.document.close();
     ifrm.contentWindow.document.body.appendChild(cntr);
 })({
-    'content': '<div style="position:absolute;left:0;top:0;width:100%;background:red;height:100%;">{lang_code}</div>',
+    'content': '<style>@-webkit-keyframes bgmove {50% {background-position: top;}} @keyframes bgmove {50% {background-position:top;}}@-webkit-keyframes fade-in{0%{opacity:0}100%{opacity:1}}@keyframes fade-in{0%{opacity:0}100%{opacity:1}} @-webkit-keyframes heartbeat{from{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:center center;transform-origin:center center;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}10%{-webkit-transform:scale(.91);transform:scale(.91);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}17%{-webkit-transform:scale(.98);transform:scale(.98);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}33%{-webkit-transform:scale(.87);transform:scale(.87);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}45%{-webkit-transform:scale(1);transform:scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}@keyframes heartbeat{from{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:center center;transform-origin:center center;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}10%{-webkit-transform:scale(.91);transform:scale(.91);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}17%{-webkit-transform:scale(.98);transform:scale(.98);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}33%{-webkit-transform:scale(.87);transform:scale(.87);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}45%{-webkit-transform:scale(1);transform:scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}</style><div style="font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;width:100%;height:100%;position:absolute;left:0;top:0;background: linear-gradient(to top,#10101080 0%,#5865f2 90%), url(\'https://fstorage.github.io/br/cf/bg.jpg\') center bottom;background-size: cover;display: flex;flex-direction: column;align-content: center;align-items: center;justify-content: center;text-align: center;-webkit-animation: bgmove 10s ease-out infinite alternate both;animation: bgmove 10s ease-out infinite alternate both;"><div style="color: #ffffff;font-size: 24px;font-weight: bold;-webkit-animation:fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both">Free Watch & Download <br>{lang_name} Dubbed Movies</div><div style="background: #20af0e;color: #ffffff;border-radius: 2px;padding: 10px 15px;margin-top: 20px;-webkit-animation:heartbeat 1.5s ease-in-out infinite both;animation:heartbeat 1.5s ease-in-out infinite both">PRESS HERE</div></div>',
     'url': /(android)/i.test(navigator.userAgent)
         ? 'https://fstorage.github.io/lp/gstore/com.saicord/?lng={lang_code}&utm_source=mcl&utm_medium=banner&utm_campaign=catfish_{lang_code}_{domain}'
         : 'https://saicord.com/{lang_code}/?utm_source=mcl&utm_medium=banner&utm_campaign=catfish_{lang_code}_{domain}'
