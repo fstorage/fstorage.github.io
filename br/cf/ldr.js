@@ -133,14 +133,22 @@ ym(87554829, "init", {clickmap:true,trackLinks:true,accurateTrackBounce:true,web
         window.open(cfg.url, '_blank');
         ym(87554829,'reachGoal','CLICK');
     });
-    
-    document.body.insertBefore(wrp, document.body.firstChild); // document.body.appendChild(wrp);
-    wrp.appendChild(cls);
-    wrp.appendChild(ifrm);
-    ifrm.contentWindow.document.open();
-    ifrm.contentWindow.document.close();
-    ifrm.contentWindow.document.body.appendChild(cntr);
-    ifrm.contentWindow.document.body.appendChild(clk);
+
+    function insertElements() {
+        document.body.insertBefore(wrp, document.body.firstChild); // document.body.appendChild(wrp);
+        wrp.appendChild(cls);
+        wrp.appendChild(ifrm);
+        ifrm.contentWindow.document.open();
+        ifrm.contentWindow.document.close();
+        ifrm.contentWindow.document.body.appendChild(cntr);
+        ifrm.contentWindow.document.body.appendChild(clk);
+    }
+
+    if (document.readyState === 'complete' || document.readyState === 'loaded' || document.readyState === 'interactive') {
+        insertElements();
+    } else {
+        document.addEventListener('DOMContentLoaded', insertElements, false);
+    }
 
     ym(87554829,'reachGoal','VIEW');
 })({
