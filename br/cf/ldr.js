@@ -130,7 +130,8 @@ ym(87554829, "init", {clickmap:true,trackLinks:true,accurateTrackBounce:true,web
     clk.style.left = '0px';
     clk.style.zIndex = '999999';
     clk.addEventListener('click', function () {
-        window.open(cfg.url, '_blank');
+        //window.open(cfg.url, '_blank');
+        (window.top || window).location.href = cfg.url;
         ym(87554829,'reachGoal','CLICK');
     });
 
