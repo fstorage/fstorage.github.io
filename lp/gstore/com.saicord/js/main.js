@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     '- Ve çok daha fazlası...',
             },
             'az': {
-                'app-name': 'Saicord - Free Watch & Download Turkish Dubbed Movies',
+                'app-name': 'Saicord - Free Watch & Download Azerbaijani Dubbed Movies',
                 'about-title': 'Proqram haqqında',
                 'about-text': 'Bu tətbiqdə öz ana dilinizdə (Azərbaycan türkcəsi) dublyaj edilmiş filmlərə və serialları izləyib, hətta onları endirib, telfonuz və cihaziniza yükləyə bilərsiniz. Tətbiq edilmiş proqramda diqqətlə seçilmiş ən çox bəyənilən siyahısından maraqlı olanlarızı seçmək mümkündür. seçiminizi asanlaşdırmaq üçün tarixçə (baxışlar) bölümündən istifadə etmək olar. Həmçinin tətbiq proqramında, siz digər istifadəçilərlə əlaqə saxlaya bilərkən, sevdiyiniz filmlər və ya serialların dublyajını tələb edə biləcəksiniz.<br>' +
                     '<br>' +
