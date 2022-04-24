@@ -100,6 +100,36 @@ document.addEventListener('DOMContentLoaded', function () {
                     '- ستصلك إشعارات حول المحتوى الجديد<br>' +
                     '-  افضل الافلام وأكثرهم رواجاً<br>' +
                     '- والكثير الكثير من المميزات الشيقة تنتظركم ...',
+            },
+            'tr': {
+                'app-name': 'Saicord - Free Watch & Download Turkish Dubbed Movies',
+                'about-title': 'Uygulama hakkında',
+                'about-text': 'Uygulamamızda, Ana dilinizde dublajlı filmleri ve TV dizilerini izleyebilirsiniz bununla birlikte filmleri cihazınıza indirebilirsiniz.  Ayrıca uygulamamız ‘izlenen’ geçmişe, özenle seçilmiş en iyi listelere, diğer kullanıcılarla iletişim kurma yeteneğinin yanı sıra izlemek istediğiniz film ve dizileri istek yapabilme özelliklerine sahiptir.<br>' +
+                    '<br>' +
+                    'Özellikler:<br>' +
+                    '- Çevrimiçi Film ve Tv dizilerini izleme<br>' +
+                    '- Filmleri ve Tv dizilerini 1080p, 720p, 480 ve 360 çözünürlükleriyle indirme<br>' +
+                    '- Gelişmiş arama<br>' +
+                    '- İzlemek istediğiniz filmleri kişisel izleme listenize ekleme<br>' +
+                    '- "İzleme" geçmişi<br>' +
+                    '- Yeni içerikler hakkında bildirimler<br>' +
+                    '- Trend ve en iyi filmler<br>' +
+                    '- Ve çok daha fazlası...',
+            },
+            'az': {
+                'app-name': 'Saicord - Free Watch & Download Turkish Dubbed Movies',
+                'about-title': 'Proqram haqqında',
+                'about-text': 'Bu tətbiqdə öz ana dilinizdə (Azərbaycan türkcəsi) dublyaj edilmiş filmlərə və serialları izləyib, hətta onları endirib, telfonuz və cihaziniza yükləyə bilərsiniz. Tətbiq edilmiş proqramda diqqətlə seçilmiş ən çox bəyənilən siyahısından maraqlı olanlarızı seçmək mümkündür. seçiminizi asanlaşdırmaq üçün tarixçə (baxışlar) bölümündən istifadə etmək olar. Həmçinin tətbiq proqramında, siz digər istifadəçilərlə əlaqə saxlaya bilərkən, sevdiyiniz filmlər və ya serialların dublyajını tələb edə biləcəksiniz.<br>' +
+                    '<br>' +
+                    'Proqramın imkanlar:<br>' +
+                    '- Onlayn film və serialları izləmək<br>' +
+                    '- Filmləri və serialları 1080p, 720p, 480, 360p keyfiyyətində endirmək<br>' +
+                    '- qabaqcıl və inkişaflı axtarış<br>' +
+                    '- Şəxsi izləmə siyahısına videoları əlavə edə bilmək<br>' +
+                    '- Tətbiqdaxılı tarix aləti (izlənilənlər)<br>' +
+                    '- Yeni məzmunlu tətbiqlər haqqında məlumat əldə etmək<br>' +
+                    '- Populyar və ən yaxşı filmlərin kateqoriyaları<br>' +
+                    '- və bir çox başqa imkanlar...<br>',
             }
         },
         finalFallback: 'en'
